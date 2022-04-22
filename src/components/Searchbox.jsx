@@ -2,18 +2,18 @@ import React from 'react';
 
 function Searchbox() {
   return (
-    <div class='flex justify-center'>
-      <div class='mb-3 xl:w-96'>
-        <div class='input-group relative flex flex-wrap items-stretch w-full mb-4'>
+    <div className='flex justify-center'>
+      <div className='mb-3 xl:w-96 py-8'>
+        <div className='input-group relative flex flex-wrap items-stretch w-full mb-4'>
           <input
             type='search'
-            class='form-control relative flex-auto min-w-0 block px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-neutral-800 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none'
+            className='form-control relative flex-auto min-w-0 block px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-neutral-800 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-red-600 focus:outline-none'
             placeholder='Search movies'
             aria-label='Search'
             aria-describedby='button-addon2'
           />
           <button
-            class='btn inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out flex items-center'
+            className='btn inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out flex items-center'
             type='button'
             id='button-addon2'
           >
@@ -22,7 +22,7 @@ function Searchbox() {
               focusable='false'
               data-prefix='fas'
               data-icon='search'
-              class='w-4'
+              className='w-4'
               role='img'
               xmlns='http://www.w3.org/2000/svg'
               viewBox='0 0 512 512'
