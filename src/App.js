@@ -17,8 +17,7 @@ function App() {
     const API_URL = 'http://www.omdbapi.com/?s=star wars&apikey=122b7f36';
     const response = await fetch(API_URL);
     const responseJson = await response.json();
-
-    console.log(responseJson);
+    // console.log(responseJson);
     setMovie(responseJson.Search);
   };
 
