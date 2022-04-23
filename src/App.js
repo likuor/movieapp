@@ -6,29 +6,31 @@ import Header from './components/Header.jsx';
 import Movie from './components/Movie.jsx';
 import Searchbox from './components/Searchbox';
 
-// const API_KEY = process.env.REACT_APP_API_KEY;
-// const API_URL = `https://www.omdbapi.com/${API_KEY}`;
-// const API_URL = 'https://www.omdbapi.com/';
+const API_KEY = process.env.REACT_APP_API_KEY;
+const base_URL = `https://www.omdbapi.com/`;
 
 function App() {
   const [movie, setMovie] = useState([]);
+  const [searchValue, setSearchValue] = useState('');
 
-  const getMovieRequest = async () => {
-    const API_URL = 'http://www.omdbapi.com/?s=star wars&apikey=122b7f36';
+  const getMovieRequest = async (searchValue) => {
+    const API_URL = `${base_URL}?s=${searchValue}&apikey=${API_KEY}`;
     const response = await fetch(API_URL);
     const responseJson = await response.json();
-    // console.log(responseJson);
-    setMovie(responseJson.Search);
+
+    if (responseJson.Search) {
+      setMovie(responseJson.Search);
+    }
   };
 
   useEffect(() => {
-    getMovieRequest();
-  }, []);
+    getMovieRequest(searchValue);
+  }, [searchValue]);
 
   return (
     <div className='App'>
       <Header title='Movieapp' />
-      <Searchbox />
+      <Searchbox searchValue={searchValue} setSearchValue={setSearchValue} />
       <Movie movie={movie} />
     </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Searchbox() {
+function Searchbox(props) {
   return (
     <div className='flex justify-center'>
       <div className='mb-3 xl:w-96 py-8'>
@@ -11,6 +11,8 @@ function Searchbox() {
             placeholder='Search movies'
             aria-label='Search'
             aria-describedby='button-addon2'
+            value={props.searchValue}
+            onChange={(event) => props.setSearchValue(event.target.value)}
           />
           <button
             className='btn inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:bg-red-700  focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-lg transition duration-150 ease-in-out flex items-center'
