@@ -25,7 +25,7 @@ function header(props) {
             </div>
           </div>
         </nav>
-        <div className='text-center bg-neutral-800 text-white py-20 px-6'>
+        <div className='text-center bg-neutral-900 text-white py-20 px-6'>
           <h1 className='text-5xl font-bold mb-6'>Welcome to Movieapp</h1>
           <h3 className='text-3xl font-bold mb-6'>
             Search movies you want to watch
