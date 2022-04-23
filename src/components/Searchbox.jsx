@@ -3,7 +3,7 @@ import React from 'react';
 function Searchbox(props) {
   return (
     <div className='flex justify-center'>
-      <div className='mb-3 xl:w-96 py-8'>
+      <div className='mb-5 xl:w-96'>
         <div className='input-group relative flex flex-wrap items-stretch w-full mb-4'>
           <input
             type='search'

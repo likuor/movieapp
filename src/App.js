@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 
 import './index.css';
 import Header from './components/Header.jsx';
@@ -15,11 +15,14 @@ function App() {
 
   const getMovieRequest = async (searchValue) => {
     const API_URL = `${base_URL}?s=${searchValue}&apikey=${API_KEY}`;
-    const response = await fetch(API_URL);
-    const responseJson = await response.json();
 
-    if (responseJson.Search) {
-      setMovie(responseJson.Search);
+    try {
+      const response = await axios.get(API_URL);
+      if (response.data.Search) {
+        setMovie(response.data.Search);
+      }
+    } catch (error) {
+      console.error(error);
     }
   };
 
